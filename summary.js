@@ -3,7 +3,7 @@
 
 function getConfig() {
     return {
-        defaultThumbnail: "https://edu.ieee.org/gr-ihu-serres/wp-content/uploads/sites/92/ieee-ihu-serres-logo.png",
+        defaultThumbnail: "ieee.jpeg",
         defaultFile: "./summaryData.csv"
     }
 }
@@ -31,7 +31,7 @@ function parseSummaryItem(summaryItem, defaultThumbnail) {
         date: summaryArrayData[1],
         type: summaryArrayData[2],
         thumbnail: ((summaryArrayData[3].length <= 1))
-            ? defaultThumbnail
+            ? `./img/${defaultThumbnail}`
             : `./img/${summaryArrayData[3]}`,
     };
 }
