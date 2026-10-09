@@ -1,6 +1,0 @@
-#!/bin/bash
-
-ARCHS="linux/386,linux/amd64,linux/arm64"
-docker buildx create --use --platform=$ARCHS --name multi-platform-builder
-docker buildx inspect --bootstrap
-docker buildx build --platform=$ARCHS --push --tag $IMAGE_NAME -f $DOCKERFILE_PATH .
