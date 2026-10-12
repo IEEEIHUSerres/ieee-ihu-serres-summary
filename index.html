@@ -2,35 +2,70 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="A timeline of the activities of the IEEE Student Branch of the International Hellenic University, Serres Campus."
+          name="description">
+    <meta content="#00629b" name="theme-color">
     <title>Summary - IEEE IHU (Serres)</title>
 
     <link href="./favicon.png" rel="shortcut icon"/>
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-    <script src="https://unpkg.com/pure-md5@latest/lib/index.js" type="application/javascript"></script>
-    <script src="summary.js" type="application/javascript"></script>
-
-    <script crossorigin="anonymous"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="./styles.css" rel="stylesheet"/>
+    <script defer src="./summary.js"></script>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-3 d-none d-lg-block"></div>
-        <img alt="IEEE IHU (Serres)" class="col-md-12 col-lg-6" src="./img/ieee-ihu-logo.png"/>
-        <div class="col-3 d-none d-lg-block"></div>
+<header class="site-header">
+    <div class="wrap site-header__inner">
+        <a class="brand" href="https://ieeeihuserres.org/">
+            <img alt="IEEE Student Branch, International Hellenic University, Serres Campus" class="brand__logo"
+                 height="512" src="./img/ieee-ihu-logo.png" width="2048"/>
+        </a>
+        <a class="site-header__link" href="https://ieeeihuserres.org/news/">Latest news &rarr;</a>
     </div>
-    <div class="row" id="summaryPlaceHolder"></div>
-</div>
-<script>
-    renderSummary();
-</script>
+</header>
+
+<main class="wrap">
+    <section aria-labelledby="hero-title" class="hero">
+        <p class="hero__eyebrow">Activity summary</p>
+        <h1 class="hero__title" id="hero-title">What we have been up to</h1>
+        <p class="hero__lead">Competitions, congresses, workshops and awards from the IEEE Student Branch
+            of the International Hellenic University, Serres Campus.</p>
+
+        <dl class="stats" id="stats" aria-live="polite">
+            <div class="stat"><dt>Activities</dt><dd data-stat="total">–</dd></div>
+            <div class="stat"><dt>Years active</dt><dd data-stat="years">–</dd></div>
+            <div class="stat"><dt>Organised by us</dt><dd data-stat="organised">–</dd></div>
+            <div class="stat"><dt>Awards</dt><dd data-stat="awards">–</dd></div>
+        </dl>
+    </section>
+
+    <div class="toolbar" role="search">
+        <label class="search">
+            <span class="visually-hidden">Search activities</span>
+            <svg aria-hidden="true" class="search__icon" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m20 20-3.5-3.5"/>
+            </svg>
+            <input autocomplete="off" id="search" placeholder="Search activities…" type="search"/>
+        </label>
+        <div aria-label="Filter by category" class="filters" id="filters" role="group"></div>
+    </div>
+
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+
+    <div class="timeline" id="summaryPlaceHolder">
+        <p class="state">Loading activities…</p>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <p>IEEE Student Branch &middot; International Hellenic University &middot; Serres Campus</p>
+        <p><a href="https://ieeeihuserres.org/">ieeeihuserres.org</a></p>
+    </div>
+</footer>
+
+<noscript>
+    <p class="wrap state">This page needs JavaScript to show the activity timeline.</p>
+</noscript>
 </body>
 </html>
